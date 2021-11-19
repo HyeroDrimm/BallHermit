@@ -23,6 +23,8 @@ public class BoardScript : MonoBehaviour
 
     public GameObject help;
 
+    private int currentScore = 32;
+
     private void Start()
     {
         if (PlayerPrefs.GetInt("OpenedOnce", 0) == 0)
@@ -66,7 +68,8 @@ public class BoardScript : MonoBehaviour
     }
     public void UpdateScore()
     {
-        ballCount.text = (Int32.Parse(ballCount.text) - 1).ToString();
+        currentScore--;
+        ballCount.text = currentScore.ToString();
     }
 
     public void GameEnd()
